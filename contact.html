@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking school - Contact</title>
+    <!-- font google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="build/css/app.min.css">
+</head>
+<body>
+    <header class="header contenedor">
+        <div class="header__grid">
+            <div class="header__logo">
+                <a href="index.html">
+                    <img src="build/img/logo.svg" alt="logo escuela cocina">
+                </a>
+            </div>
+            
+            <nav class="navegacion">
+                <a href="about.html" class="navegacion__enlace">About Us</a>
+                <a href="blog.html" class="navegacion__enlace">Blog</a>
+                <a href="clases.html" class="navegacion__enlace">Classes</a>
+                <a href="gallery.html" class="navegacion__enlace">Gallery</a>
+                <a href="contact.html" class="navegacion__enlace">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="contenedor">
+            <h2 class="hero__heading">Contact</h2>
+        </div>
+    </div>
+
+    <main class="contact">
+        <div class="contenedor">
+            <div class="contact__grid">
+
+                <div class="contact__form">
+                    <form class="formulario">
+                        <fieldset class="formulario__fieldset">
+                            <legend class="formulario__legend">Contact us to know more</legend>
+
+                            <div class="formulario__campo">
+                                <label class="formulario__label" for="nombre">First Name:</label>
+                                <input class="formulario__input" type="text" id="nombre" placeholder="You'r First Name">
+                            </div>
+
+                            <div class="formulario__campo">
+                                <label class="formulario__label" for="nombre">Last Name:</label>
+                                <input class="formulario__input" type="text" id="nombre" placeholder="You'r Last Name">
+                            </div>
+
+                            <div class="formulario__campo">
+                                <label class="formulario__label" for="email">Email:</label>
+                                <input class="formulario__input" type="email" id="email" placeholder="Ej: owen@gmail.com">
+                            </div>
+
+                            <div class="formulario__campo">
+                                <label class="formulario__label" for="tel">Tel:</label>
+                                <input class="formulario__input" type="tel" id="tel" placeholder="Ej: 1162173874">
+                            </div>
+
+                            <div class="formulario__campo">
+                                <label class="formulario__label">Info About:</label>
+                                <div class="formulario__radio">
+                                    <label class="formulario__info" for="courses">Courses</label>
+                                    <input type="radio" id="courses" name="info">
+                                </div>
+                                <div class="formulario__radio">
+                                    <label class="formulario__info" for="info">Info</label>
+                                    <input type="radio" id="info" name="info">
+                                </div>
+                            </div>
+
+                            <div class="formulario__campo">
+                                <label class="formulario__label" for="mensaje">Message:</label>
+                                <textarea class="formulario__input formulario__input--textarea" id="mensaje" placeholder="Leave me a message"></textarea>
+                            </div>
+                        </fieldset>
+                    </form><!-- formulario -->
+
+                    <div class="sociales">
+                        <nav class="sociales__nav">
+                            <a href="#" class="sociales__enlace facebook">
+                                <i class="bi bi-facebook"></i>
+                                <span class="sociales__span"></span>
+                            </a>
+                            <a href="#" class="sociales__enlace instagram">
+                                <i class="bi bi-instagram"></i>
+                                <span class="sociales__span"></span>
+                            </a>
+                            <a href="#" class="sociales__enlace twitter">
+                                <i class="bi bi-twitter-x"></i>
+                                <span class="sociales__span"></span>
+                            </a>
+                            <a href="#" class="sociales__enlace whatsapp">
+                                <i class="bi bi-whatsapp"></i>
+                                <span class="sociales__span"></span>
+                            </a>
+                        </nav>
+                    </div>
+                </div><!-- contact-form -->
+
+                <div class="contact__info">
+                    <div class="info">
+                        <span class="info__icono">
+                            <i class="bi bi-pin-angle-fill"></i>
+                        </span>
+                        <h3 class="info__nombre">Location</h3>
+                        <p class="info__texto">Mza 937 Lote 5</p>
+                        <p class="info__texto">Jujuy, Argentina</p>
+                    </div>
+
+                    <div class="info">
+                        <span class="info__icono">
+                            <i class="bi bi-envelope-at-fill"></i>
+                        </span>
+                        <h3 class="info__nombre">Email</h3>
+                        <p class="info__texto">Email: abaiud55@gmail.com</p>
+                    </div>
+
+                    <div class="info">
+                        <span class="info__icono">
+                            <i class="bi bi-telephone-fill"></i>
+                        </span>
+                        <h3 class="info__nombre">Phone</h3>
+                        <p class="info__texto">Tel: 1162173874</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer contenedor">
+        <nav class="navegacion">
+            <a href="about.html" class="navegacion__enlace">About Us</a>
+            <a href="blog.html" class="navegacion__enlace">Blog</a>
+            <a href="clases.html" class="navegacion__enlace">Classes</a>
+            <a href="gallery.html" class="navegacion__enlace">Gallery</a>
+            <a href="contact.html" class="navegacion__enlace">Contact</a>
+        </nav>
+
+        <p class="footer__copy">All rights reserved &copy; <span class="footer__span">Cooking school</span></p>
+    </footer>
+
+    <script src="js/contact.js"></script>
+</body>
+</html>

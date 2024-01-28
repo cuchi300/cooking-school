@@ -1,0 +1,127 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.seccion{
+    padding: 13rem 0;
+
+    &__grid{
+        &--rosa{
+            color: v.$blanco;
+            
+            @include m.desktop { 
+                display: flex;
+                justify-content: flex-end;
+                margin: auto;
+            }
+        }
+    }
+}
+
+.bg{
+    background-image: linear-gradient(transparentize(v.$negro, .5) 0%,transparentize(v.$negro, .5) 100% ), url('../img/about_us.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 40rem;
+    &__grid{
+        color: v.$blanco;
+        display: grid;
+        place-content: center;
+        text-align: center;
+        height: 40rem;
+    }
+    
+}
+
+.seccion-rosa{
+    background-image: url(../img/libro-recetas.webp), linear-gradient(v.$primario 0% ,v.$primario 100%);
+    background-repeat: no-repeat;
+    background-size: 110%, 100%;
+    background-position: -2rem 33rem, center;
+    @include m.tablet { 
+        background-size: 80%, 100%;
+        background-position: 49rem -2rem, center;
+    }
+    @include m.desktop { 
+        background-position: 15rem center, center;
+        background-size: 23%, 100%;
+    }
+}
+.seccion-blanco{
+    @include m.bgImage('../img/about_1.webp');
+    background-size: 115%;
+    background-position: 2rem 35rem;
+    @include m.tablet { 
+        background-size: 60%;
+        background-position: 45rem 20rem;
+    }
+    @include m.desktop { 
+        background-size: 25%;
+        background-position: 80rem center;
+    }
+}
+.size{
+    font-weight: 900;
+    font-size: 3.8rem;
+}
+.width{
+    max-width: 60rem;
+}
+
+.profesores{
+    padding: 10rem 0;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid transparentize(v.$primario, .8);
+    &__heading{
+        text-align: center;
+        font-weight: 400;
+        margin-bottom: 5rem;
+    }
+    &__grid{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        @include m.tablet{ 
+            grid-template-columns: repeat(2,20rem);
+        }
+        @include m.desktop { 
+            grid-template-columns: repeat(4,20rem);
+        }
+    }
+}
+.profesor{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    &__picture{
+        position: relative;
+        overflow: hidden;
+        height: 30rem;
+        &::before{
+            background-color: v.$primario;
+            border-radius: 50%;
+            bottom: 1.9rem;
+            content: "";
+            height: 20rem;
+            left: 0;
+            position: absolute;
+            width: 20rem;
+            z-index: -1;
+        }
+    }
+    &__imagen{
+        width: 20rem;
+        margin: 0 auto;
+        border-radius: 0 0 43% 43%;
+        overflow: hidden;
+    }
+    &__nombre{
+        font-weight: 900;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+}

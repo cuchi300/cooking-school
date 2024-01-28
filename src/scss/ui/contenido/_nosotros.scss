@@ -1,0 +1,35 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.nosotros{
+    padding: 5rem 0;
+    &__heading{
+        @include m.heading;
+    }
+    &__grid{
+        @include m.desktop { 
+            @include m.grid(3,2rem);
+        }
+    }
+    &__bloque{
+        text-align: center;
+        margin-bottom: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &:last-of-type{
+            margin-bottom: 0;
+        }
+        @include m.desktop { 
+            margin-bottom: 0;
+        }
+    }
+    &__bloque-heading{
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+    &__imagen{
+        margin: 0 auto;
+        width: 8rem;
+    }
+}

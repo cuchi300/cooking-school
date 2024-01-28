@@ -1,0 +1,120 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contact{
+    background-image: linear-gradient(transparentize(v.$negro, .5) 0%, transparentize(v.$negro, .5) 100%), url(../img/contact_bg.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10rem 0;
+
+    &__form{
+        position: relative;
+
+        @include m.tablet { 
+            max-width: 50rem;
+            margin: 0 auto;
+        }
+        @include m.desktop { 
+            max-width: 60rem;
+            margin: 0;
+        }
+    }
+
+    &__info{
+        padding-top: 12rem;
+        gap: 5rem;
+        display: flex;
+        flex-direction: column;
+
+        @include m.tablet { 
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+}
+
+.formulario{
+    backdrop-filter: blur(10px);
+    color: v.$blanco;
+    
+    &__fieldset{
+        border: 1px solid v.$primario;
+        padding: 3rem;
+    }
+    &__legend{
+        margin: 0 auto;
+        font-size: 2rem;
+        font-weight: 400;
+    }
+    &__campo{
+        margin-bottom: 2rem;
+    }
+    &__radio{
+        display: flex;
+        flex-direction: row-reverse;
+        width: max-content;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    &__label{
+        display: block;
+        margin-bottom: .5rem;
+        font-weight: 400;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+    &__input{
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        &--textarea{
+            height: 20rem;
+        }
+    }
+    input[type="radio"]{
+        width: 1.5rem;
+    }
+    &__info{
+        font-size: 1.6rem;
+    }
+}
+
+.sociales{
+    position: absolute;
+    margin-top: 2rem;
+    @include m.tablet { 
+        top: 1rem;
+        right: -5rem;
+    }
+    &__nav{
+        display: flex;
+        gap: 3rem;
+        @include m.tablet { 
+            flex-direction: column;
+        }
+    }
+    &__enlace{
+        font-size: 2.8rem;
+        color: v.$blanco;
+        &:hover{
+            color: v.$primario;
+        }
+    }
+}
+
+.info{
+    color: v.$blanco;
+    text-align: center;
+    &__icono{
+        font-size: 3rem;
+    }
+    &__nombre{
+        color: v.$primario;
+        margin-top: 2rem;
+        font-weight: 700;
+    }
+    &__texto{
+        margin: 0;
+    }
+}

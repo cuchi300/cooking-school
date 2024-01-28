@@ -1,0 +1,120 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.planes{
+    padding: 8rem 0;
+    border-bottom: 1px solid transparentize(v.$primario, .8);
+    &__heading{
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 900;
+        width: 60rem;
+        margin: 0 auto 5rem auto;
+    }
+
+    &__grid{
+        display: grid;
+        gap: 2rem;
+        @include m.tablet { 
+            grid-template-columns: repeat(3, 25rem);
+            justify-content: center;
+        }
+        @include m.desktop { 
+            grid-template-columns: repeat(3, 30rem);
+        }
+    }
+}
+
+.plan{
+    border: 1px solid transparentize(v.$primario, .8);
+    text-align: center;
+    padding: 4rem 2rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    @include m.tablet { 
+        overflow: visible;
+    }
+    &::before{
+        content: '';
+        background-repeat: no-repeat;
+        background-size: 70%;
+        position: absolute;
+        top: -3rem;
+        left: -5rem;
+        height: 20rem;
+        width: 20rem;
+        @include m.tablet { 
+            background-size: 50%;
+            top: -3rem;
+            left: -1rem; 
+        }
+    }
+    &__nombre{
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+    &__precio{
+        font-size: 3.8rem;
+        font-weight: 900;
+        color: v.$primario;
+        margin: 1rem 0;
+        letter-spacing: -1px;
+    }
+    &__lista{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        list-style: disc;
+        padding-left: 3rem;
+        @include m.tablet { 
+            height: 15rem;
+        }
+    }
+    &__li{
+        font-weight: 400;
+        width: 18rem;
+        margin: 0 auto;
+        font-size: 1.5rem;
+    }
+    &__boton{
+        @include m.boton(v.$primario, v.$blanco);
+        padding: 1rem;
+        width: 100%;
+        text-transform: uppercase;
+        border: 1px solid v.$blanco;
+        @include m.tablet { 
+            display: block;
+        }
+    }
+    &:hover{
+        background-color: v.$primario;
+        color: v.$blanco;
+        cursor: pointer;
+    }
+    &:hover &__precio{
+        color: v.$blanco;
+    }
+    &:hover &__boton{
+        background-color: v.$blanco;
+        color: v.$primario;
+    }
+}
+
+.plato-uno{
+    &::before{
+        background-image: url(../img/plato_1.webp);
+    }    
+}
+.plato-dos{
+    &::before{
+        background-image: url(../img/plato_2.webp);
+    }
+}
+.plato-tres{
+    &::before{
+        background-image: url(../img/plato_3.webp);
+    }
+}

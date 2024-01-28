@@ -1,0 +1,66 @@
+@use 'variables' as v;
+@use 'base/mixins' as m;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body {
+    font-family: v.$fuentePrincipal;
+    font-size: 1.6rem;
+    font-weight: 300;
+    
+    --scrollbar-width: 10px; --scrollbar-height: 10px; --scrollbar-border-thickness: 0px; --scrollbar-thumb-color: #F46669; } body::-webkit-scrollbar { width: var(--scrollbar-width, 20px); height: var(--scrollbar-height, 20px); }body::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb-color, #3B82F6); border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255)); border-radius: var(--scrollbar-border-radius, 4px); }body::-webkit-scrollbar-track { background: var(--scrollbar-track-color, #A1A1AA); }body::-webkit-scrollbar-corner { background: var(--scrollbar-corner-color, #FFFFFF); border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255)); border-radius: var(--scrollbar-border-radius, 4px); }body::-webkit-scrollbar-button:vertical:start:increment, #preview::-webkit-scrollbar-button:vertical:end:decrement, #preview::-webkit-scrollbar-button:horizontal:start:increment, #preview::-webkit-scrollbar-button:horizontal:end:decrement { display: var(--show-double-buttons, none);
+}
+.contenedor {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+p{
+    letter-spacing: .1rem;
+}
+ul {
+    padding:0;
+    list-style: none;
+    margin: 0;
+}
+.hero{
+    background-color: v.$primario;
+    color: v.$blanco;
+    padding: .5rem 0;
+    text-align: center;
+    margin-bottom: 0;
+    @include m.desktop { 
+        text-align: left;
+    }
+    &__heading{
+        font-weight: 900;
+        font-size: 2.8rem;
+        @include m.tablet { 
+            font-size: 3.2rem;   
+        }
+    }
+}
+.hero-blog{
+    margin-bottom: 5rem;
+}
+.shadow{
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(240,232,240,1);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(240,232,240,1);
+    box-shadow: 0px 0px 3px 0px rgba(240,232,240,1);
+}
+.shadow-picture{
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+}
