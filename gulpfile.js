@@ -29,7 +29,7 @@ function cssbuild() {
             suffix: '.min'
         }))
         .pipe(purgecss({
-            content: ['**/*.html']
+            content: ['**/*.html', 'js/**/*.js']
         }))
         .pipe(dest('build/css'))
 }
@@ -60,8 +60,9 @@ function versionAvif() {
 
 function dev() {
     watch('src/scss/**/*.scss', css)
-    watch('src/img/**/*', imagenes)
-    watch('src/img/**/*', versionWebp)
+    watch('build/css/app.css', cssbuild)
+    // watch('src/img/**/*', imagenes)
+    // watch('src/img/**/*', versionWebp)
 }
 
 exports.css = css;
@@ -70,4 +71,4 @@ exports.cssbuild = cssbuild;
 exports.imagenes = imagenes;
 exports.versionWebp = versionWebp;
 exports.versionAvif = versionAvif;
-exports.default = series( css, dev );
+exports.default = series( css, dev, cssbuild );
